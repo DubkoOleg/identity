@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Imynusoph.Server.Models;
+using OlMag.Identity.Api.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Imynusoph.Server;
+namespace OlMag.Identity.Api;
 
 public class Worker : IHostedService
 {

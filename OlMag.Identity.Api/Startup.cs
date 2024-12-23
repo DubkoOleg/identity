@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using Imynusoph.Server.Models;
+using OlMag.Identity.Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
 
-namespace Imynusoph.Server;
+namespace OlMag.Identity.Api;
 
 public class Startup
 {

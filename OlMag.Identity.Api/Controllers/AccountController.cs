@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
-using Imynusoph.Server.Models;
-using Imynusoph.Server.ViewModels.Account;
+using OlMag.Identity.Api.Models;
+using OlMag.Identity.Api.ViewModels.Account;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Imynusoph.Server.Controllers;
+namespace OlMag.Identity.Api.Controllers;
 
 [Authorize]
 public class AccountController : Controller

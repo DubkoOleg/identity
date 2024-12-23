@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlMag.Identity.Api", "Imynusoph.Server\OlMag.Identity.Api.csproj", "{A449A3B5-8ACF-460D-94AA-1DB5A1E21BCC}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{87883962-43C8-46C5-A3BA-2A7CBB30F5A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlMag.Identity.Api", "OlMag.Identity.Api\OlMag.Identity.Api.csproj", "{BFC1C9A7-8C57-4111-BA44-66BF5BF93926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A449A3B5-8ACF-460D-94AA-1DB5A1E21BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A449A3B5-8ACF-460D-94AA-1DB5A1E21BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A449A3B5-8ACF-460D-94AA-1DB5A1E21BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A449A3B5-8ACF-460D-94AA-1DB5A1E21BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87883962-43C8-46C5-A3BA-2A7CBB30F5A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87883962-43C8-46C5-A3BA-2A7CBB30F5A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87883962-43C8-46C5-A3BA-2A7CBB30F5A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87883962-43C8-46C5-A3BA-2A7CBB30F5A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC1C9A7-8C57-4111-BA44-66BF5BF93926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1C9A7-8C57-4111-BA44-66BF5BF93926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC1C9A7-8C57-4111-BA44-66BF5BF93926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC1C9A7-8C57-4111-BA44-66BF5BF93926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

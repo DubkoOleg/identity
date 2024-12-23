@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Imynusoph.Server.Models;
+namespace OlMag.Identity.Api.Models;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {

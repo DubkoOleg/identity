@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Imynusoph.Server.ViewModels.Account;
+namespace OlMag.Identity.Api.ViewModels.Account;
 
 public class RegisterViewModel
 {

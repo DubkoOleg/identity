@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Imynusoph.Server.Models;
+using OlMag.Identity.Api.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
@@ -19,7 +19,7 @@ using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace Imynusoph.Server.Controllers;
+namespace OlMag.Identity.Api.Controllers;
 
 public class AuthorizationController : Controller
 {

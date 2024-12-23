@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  olmag.identity.api:
+    image: ${DOCKER_REGISTRY-}olmagidentityapi
+    build:
+      context: .
+      dockerfile: OlMag.Identity.Api/Dockerfile
+    networks:
+      - identity
+      
+  cleidentitydb:
+    image: postgres:13-alpine
+    restart: unless-stopped
+    container_name: cleidentitydb
+    environment:
+      POSTGRES_PASSWORD: 123qweQWE
+      POSTGRES_DB: cle.identity
+      POSTGRES_USER: cle_identity
+    command: -c shared_buffers=128MB -c max_connections=200 -c max_prepared_transactions=200 -c effective_cache_size=384GB -c maintenance_work_mem=2GB -c checkpoint_completion_target=0.7 -c wal_buffers=16MB -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=335544kB -c min_wal_size=1GB -c max_wal_size=4GB
+    ports:
+      - 5532:5432
+    volumes:
+      - cleidentitydb:/var/lib/postgresql/data
+    networks:
+      - identity
+      
+networks:
+  identity:
+    name: identity

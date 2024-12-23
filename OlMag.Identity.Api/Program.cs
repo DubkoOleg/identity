@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Imynusoph.Server;
+namespace OlMag.Identity.Api;
 
 public static class Program
 {
