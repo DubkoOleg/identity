@@ -1,11 +1,11 @@
-﻿using System.IO;
-using OlMag.Identity.Api.Models;
+﻿using OlMag.Identity.Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
+using OpenIddict.Validation.AspNetCore;
 
 namespace OlMag.Identity.Api;
 
@@ -25,14 +25,6 @@ public class Startup
         services.AddDbContext<ApplicationDbContext>(options =>
         {            
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")).UseOpenIddict();
-
-            // Configure the context to use sqlite.
-            //options.UseSqlite($"Filename={Path.Combine(Path.GetTempPath(), "openiddict-imynusoph-server.sqlite3")}");
-
-            // Register the entity sets needed by OpenIddict.
-            // Note: use the generic overload if you need
-            // to replace the default OpenIddict entities.
-            //options.UseOpenIddict();
         });
 
         // Register the Identity services.
@@ -47,6 +39,8 @@ public class Startup
             options.UseSimpleTypeLoader();
             options.UseInMemoryStore();
         });
+        
+        services.AddAuthentication(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
 
         // Register the Quartz.NET service and configure it to block shutdown until jobs are complete.
         services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
@@ -65,15 +59,18 @@ public class Startup
                 options.UseQuartz();
             })
 
-            // Register the OpenIddict server components.
+                // Register the OpenIddict server components.
             .AddServer(options =>
             {
                 // Enable the token endpoint.
                 options.SetTokenEndpointUris("connect/token");
 
-                // Enable the password and the refresh token flows.
-                options.AllowPasswordFlow()
-                       .AllowRefreshTokenFlow();
+                // Enable the client credentials flow and the password and the refresh token flows.
+                options
+                    .AllowClientCredentialsFlow()
+                    .AllowPasswordFlow()
+                    .AllowRefreshTokenFlow()
+                    ;
 
                 // Accept anonymous clients (i.e clients that don't send a client_id).
                 options.AcceptAnonymousClients();
@@ -82,7 +79,7 @@ public class Startup
                 options.AddDevelopmentEncryptionCertificate()
                        .AddDevelopmentSigningCertificate();
 
-                // Register the ASP.NET Core host and configure the ASP.NET Core-specific options.
+                // Register the ASP.NET Core host and configure the ASP.NET Core options.
                 options.UseAspNetCore()
                        .EnableTokenEndpointPassthrough();
             })
@@ -107,6 +104,7 @@ public class Startup
         app.UseDeveloperExceptionPage();
 
         app.UseRouting();
+        app.UseCors();
 
         app.UseAuthentication();
         app.UseAuthorization();
