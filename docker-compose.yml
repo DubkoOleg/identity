@@ -36,6 +36,16 @@ services:
       - olmagidentitydb:/var/lib/postgresql/data
     networks:
       - identity
+             
+  olmag.manufacturing.api:
+    container_name: OlMag.Manufacturing.Api
+    build:
+      context: .
+      dockerfile: OlMag.Manufacturing.Api/Dockerfile
+    environment:
+      - ASPNETCORE_HTTPS_PORTS=8041
+    ports:
+       - 8041:8041
 
 volumes:
   olmagidentitydb:
@@ -44,3 +54,6 @@ volumes:
 networks:
   identity:
     name: identity
+
+  olmag:
+    name: olmag

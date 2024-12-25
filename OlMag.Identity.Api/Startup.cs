@@ -59,7 +59,7 @@ public class Startup
                 options.UseQuartz();
             })
 
-                // Register the OpenIddict server components.
+            // Register the OpenIddict server components.
             .AddServer(options =>
             {
                 // Enable the token endpoint.
@@ -82,6 +82,10 @@ public class Startup
                 // Register the ASP.NET Core host and configure the ASP.NET Core options.
                 options.UseAspNetCore()
                        .EnableTokenEndpointPassthrough();
+
+                //options
+                //    .SetAccessTokenLifetime(config.AccessTokenLifetime)
+                //    .SetRefreshTokenLifetime(config.RefreshTokenLifetime);
             })
 
             // Register the OpenIddict validation components.

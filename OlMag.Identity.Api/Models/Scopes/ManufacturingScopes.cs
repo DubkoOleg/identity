@@ -7,19 +7,19 @@ namespace OlMag.Identity.Api.Models.Scopes
     {
         public static readonly OpenIddictScopeDescriptor ApiScope = new()
         {
-            Name = "olmag.api",
+            Name = "olmag.manufacturing.api",
             Resources =
             {
-                "OlMag.Api"
+                "OlMag.Manufacturing.Api"
             },
-            Description = "Access to protected OlMag API resources"
+            Description = "Access to protected OlMag Manufacturing API resources"
         };
 
         public static readonly OpenIddictApplicationDescriptor[] Applications =
         [
             new OpenIddictApplicationDescriptor
             {
-                ClientId = "OlMag.Api",
+                ClientId = "OlMag.Manufacturing.Api",
                 ClientSecret = "1447597C-38EB-4424-928F-9DA8F6909525",
                 Permissions =
                 {

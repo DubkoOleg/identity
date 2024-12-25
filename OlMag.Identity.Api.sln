@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlMag.Identity.Api", "OlMag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OlMag.Identity.Api.ConsoleTest", "OlMag.Identity.Api.ConsoleTest\OlMag.Identity.Api.ConsoleTest.csproj", "{00E25B79-4CC6-485B-89F9-2FC234E71096}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlMag.Manufacturing.Api", "OlMag.Manufacturing.Api\OlMag.Manufacturing.Api.csproj", "{FD12F170-BAF9-4E9E-9CFA-A056E4440AD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{00E25B79-4CC6-485B-89F9-2FC234E71096}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00E25B79-4CC6-485B-89F9-2FC234E71096}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00E25B79-4CC6-485B-89F9-2FC234E71096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD12F170-BAF9-4E9E-9CFA-A056E4440AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD12F170-BAF9-4E9E-9CFA-A056E4440AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD12F170-BAF9-4E9E-9CFA-A056E4440AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD12F170-BAF9-4E9E-9CFA-A056E4440AD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
